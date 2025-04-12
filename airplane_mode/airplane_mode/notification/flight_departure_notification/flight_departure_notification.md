@@ -1,0 +1,1 @@
+Your flight departs in 24 hours

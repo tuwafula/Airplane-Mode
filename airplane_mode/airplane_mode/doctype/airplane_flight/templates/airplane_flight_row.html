@@ -1,0 +1,12 @@
+{% block page_content %}
+<div>
+  {% set airline = frappe.db.get_value("Airplane", doc.airplane, "airline")%}
+  <h5>{{ airline }}</h5>
+  <p>
+    <span>{{ doc.source_airport_code }}</span> -> <span>{{ doc.destination_airport_code }}</span>
+  </p>
+  <p>{{ doc.date_of_departure  }} | {{ doc.time_of_departure }} | {{ doc.duration }}</p>
+
+  <a href="/{{ doc.route }}">View Flight</a>
+</div>
+{% endblock %}
