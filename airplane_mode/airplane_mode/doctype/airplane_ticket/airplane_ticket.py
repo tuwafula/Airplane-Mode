@@ -49,6 +49,21 @@ class AirplaneTicket(Document):
     def before_insert(self):
         self.set_seat_number()
 
+    def before_save(self):
+        airplane_capacity = 0
+        airplane = frappe.db.get_value(
+            "Airplane Flight", {"name": self.flight}, "airplane"
+        )
+        if airplane:
+            airplane_capacity = frappe.get_doc("Airplane", airplane).capacity
+
+        ticket_count = frappe.db.count(
+            "Airplane Ticket", filters={"flight": self.flight}
+        )
+
+        if ticket_count >= airplane_capacity:
+            frappe.throw("The flight is already full, please book another flight")
+
     def set_seat_number(self):
         ticket_letters = ["A", "B", "C", "D", "E"]
         seat_number = "{}{}".format(

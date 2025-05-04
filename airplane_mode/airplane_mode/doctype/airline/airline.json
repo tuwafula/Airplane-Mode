@@ -7,8 +7,10 @@
  "engine": "InnoDB",
  "field_order": [
   "founding_year",
+  "headquarters",
+  "column_break_bfkl",
   "customer_care",
-  "headquarters"
+  "website"
  ],
  "fields": [
   {
@@ -30,6 +32,16 @@
    "in_list_view": 1,
    "label": "Headquarters",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bfkl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -39,7 +51,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2025-02-24 23:50:40.300573",
+ "modified": "2025-04-26 12:22:38.170482",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",
