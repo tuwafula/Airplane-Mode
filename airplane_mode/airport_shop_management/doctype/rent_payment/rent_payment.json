@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:RE-PAY-{####}",
+ "creation": "2025-05-08 18:56:55.320479",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_rwgq",
+  "amended_from",
+  "section_break_gywj",
+  "rent_invoice",
+  "amount_paid",
+  "column_break_juod",
+  "tenant",
+  "payment_date",
+  "column_break_emrk",
+  "payment_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_rwgq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_gywj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rent_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Rent Invoice",
+   "link_filters": "[[\"Rent Invoice\",\"status\",\"in\",[\"Overdue\",\"Unpaid\",\"Partly Paid\",null]]]",
+   "options": "Rent Invoice",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "rent_invoice.total_amount",
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount Paid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_juod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "rent_invoice.tenant",
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Tenant",
+   "options": "Tenant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_emrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Cash",
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Cash\nMobile Transfer\nBank\nCheque",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-12 09:04:23.532275",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tenant"
+}

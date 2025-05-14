@@ -21,6 +21,14 @@ app_license = "mit"
 # 	}
 # ]
 
+
+fixtures = [
+    {
+        "dt": "Shop Type",
+        "filters": [["name", "in", ("Stall", "Walk-through", "Normal")]],
+    }
+]
+
 # Includes in <head>
 # ------------------
 
@@ -151,23 +159,16 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"airplane_mode.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"airplane_mode.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    "cron": {
+        "0 0 28 * *": [
+            "airplane_mode.scheduler.rent_invoice.generate_rent_invoice",
+        ],
+        "0 0 * * *": [
+            "airplane_mode.scheduler.rent_reminder.send_rent_reminder",
+        ],
+    }
+}
 
 # Testing
 # -------
@@ -244,4 +245,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

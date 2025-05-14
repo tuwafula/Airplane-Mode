@@ -10,6 +10,7 @@
   "section_break_ntah",
   "amended_from",
   "airplane",
+  "gate_number",
   "column_break_gxcb",
   "status",
   "airport_details_section",
@@ -26,7 +27,9 @@
   "section_break_prui",
   "route",
   "column_break_avmq",
-  "is_published"
+  "is_published",
+  "section_break_brrk",
+  "crew_members"
  ],
  "fields": [
   {
@@ -145,6 +148,23 @@
    "fieldname": "is_published",
    "fieldtype": "Check",
    "label": "Is Published?"
+  },
+  {
+   "fieldname": "section_break_brrk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Crew Member Item"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "gate_number",
+   "fieldtype": "Link",
+   "label": "Gate Number",
+   "options": "Airport Gate"
   }
  ],
  "has_web_view": 1,
@@ -154,31 +174,18 @@
  "links": [
   {
    "link_doctype": "Airplane Ticket",
-   "link_fieldname": "name"
+   "link_fieldname": "flight"
   }
  ],
- "modified": "2025-04-12 12:37:31.150179",
+ "modified": "2025-05-13 23:23:17.713336",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
  "naming_rule": "Expression",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "submit": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "route": "flights",
+ "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []

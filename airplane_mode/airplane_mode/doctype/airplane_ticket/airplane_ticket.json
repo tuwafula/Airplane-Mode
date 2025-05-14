@@ -11,6 +11,7 @@
   "passenger",
   "status",
   "source_airport_code",
+  "gate_number",
   "column_break_xfao",
   "flight",
   "seat",
@@ -72,6 +73,7 @@
    "fieldname": "flight",
    "fieldtype": "Link",
    "label": "Flight",
+   "link_filters": "[]",
    "options": "Airplane Flight",
    "reqd": 1
   },
@@ -152,13 +154,20 @@
   {
    "fieldname": "column_break_iszf",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "flight.gate_number",
+   "fieldname": "gate_number",
+   "fieldtype": "Link",
+   "label": "Gate Number",
+   "options": "Airport Gate"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-03 14:38:33.066570",
+ "modified": "2025-05-14 10:24:52.043614",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/assets/airplane_mode/css/shop.css">
+
+{% block page_content %}
+<body>
+  <div class="card" style="margin: 30px">
+      <header>
+          <h1>{{ title |e }}</h1>
+      </header>
+      <section>
+          <p><strong>Airport: </strong><dfn>{{ doc.airport }}</dfn></p>
+          <p><strong>Shop Name: </strong><dfn>{{ doc.shop_name }}</dfn></p>
+          <p><strong>Shop Rent: </strong><dfn>{{ doc.shop_rent }}</dfn></p>
+          <p><strong>Shop Number: </strong><dfn>{{ doc.shop_number }}</dfn></p>
+          <p><strong>Shop Location: </strong><dfn>{{ doc.location }}</dfn></p>
+          <p><strong>Occupancy Status: </strong><dfn>{{ doc.occupancy_status }}</dfn></p>
+      </section>
+      <footer>
+          <a class="button" href="/shop-lead/new?shop={{ doc.name }}">Shop Inquiry</a>
+      </footer>
+  </div>
+</body>
+{% endblock %}
+
+<!-- 64d5bfccedbd982 -->
