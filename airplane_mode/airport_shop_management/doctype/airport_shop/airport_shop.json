@@ -90,7 +90,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "is_published",
  "links": [],
- "modified": "2025-05-14 08:37:21.777126",
+ "modified": "2025-05-14 21:23:37.422491",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop",
@@ -112,8 +112,10 @@
  ],
  "route": "shops",
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "shop_name"
+ "title_field": "shop_name",
+ "track_changes": 1
 }

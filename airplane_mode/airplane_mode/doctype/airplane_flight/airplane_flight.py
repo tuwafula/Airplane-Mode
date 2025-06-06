@@ -13,6 +13,9 @@ class AirplaneFlight(WebsiteGenerator):
     def on_update(self):
         frappe.enqueue(self.update_gate_number, queue="short")
 
+    def on_update_after_submit(self):
+        frappe.enqueue(self.update_gate_number, queue="short")
+
     def update_gate_number(self):
         tickets = frappe.get_all("Airplane Ticket", filters={"flight": self.name})
         for ticket in tickets:

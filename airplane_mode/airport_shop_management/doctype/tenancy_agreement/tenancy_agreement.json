@@ -63,7 +63,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-06 18:07:44.766233",
+ "modified": "2025-05-14 21:25:31.611965",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Tenancy Agreement",
@@ -86,5 +86,6 @@
  "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "tenant"
 }
